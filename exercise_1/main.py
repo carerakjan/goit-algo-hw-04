@@ -15,7 +15,7 @@ def get_salaries(salaries_file_name: str):
             return []
             
         salaries = path.read_text('utf-8')
-        return [int(line.strip().split(',')[1]) for line in 
+        return [int(line.split(',')[1]) for line in 
                 [el.strip() for el in salaries.split('\n') if el.strip()]]
     except FileNotFoundError as e:
         print(e)
